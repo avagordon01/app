@@ -11,7 +11,7 @@ sudo gpasswd -a $USER flutterusers
 sudo chown -R :flutterusers /opt/flutter
 sudo chmod -R g+w /opt/flutter/
 
-yay -S android-sdk android-sdk-build-tools android-sdk-platform-tools android-platform
+yay -S android-sdk-build-tools android-sdk-platform-tools android-platform
 yay -S android-sdk-cmdline-tools-latest
 
 sudo groupadd android-sdk
@@ -24,3 +24,5 @@ source env.sh
 flutter doctor --android-licenses
 
 sdkmanager --install "system-images;android-29;default;x86"
+
+avdmanager create avd -n emu -k "system-images;android-29;default;x86"
